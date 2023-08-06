@@ -13,12 +13,29 @@
 //  -The result will show afterwards by comparison of choices using
 //  if statements
 
-let choice=['rock','paper','scissors']
+let choice=['rock','paper','scissors'] //create an array with 3 choices
 
 function getComputerChoice(){
     let x = Math.floor(Math.random()*3) //returns 0,1 or 2
     return choice[x] //returns a random computer output
 }
 
+let computerSelection=getComputerChoice()
+console.log(computerSelection)
 
+let playerSelection = prompt('rock paper or scissors?')
+
+playRound(playerSelection,computerSelection)
+
+function playRound(playerSelection,computerSelection){
+    if (playerSelection===computerSelection){
+    return console.log("draw")}
+
+    else if((playerSelection===choice[0] && computerSelection===choice[1]) || 
+    (playerSelection===choice[1] && computerSelection===choice[2])){
+    return console.log('you lost')}
+
+    else{
+    return console.log('you won')}
+}
   
