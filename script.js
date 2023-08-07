@@ -41,10 +41,10 @@ function game() {
         playRound(playerSelection, computerSelection) //function deciding the winner between the players
     }
     if (cpu > p1)  { //display game result message
-        return console.log('YOU LOST!')
+        return console.log(`YOU LOST!\nFinal Score is ${p1} to ${cpu}`)
     }
     else if (cpu < p1) {
-        return console.log('YOU WON!')
+        return console.log(`YOU WON! \nFinal Score is ${p1} to ${cpu}`)
     }
     else {
         console.log('DRAW!')
@@ -61,14 +61,15 @@ function playRound(playerSelection, computerSelection) { //count win, lose round
         (playerSelection === choice[1] && computerSelection === choice[2]) ||
         (playerSelection == choice[2]) && (computerSelection == choice[0])) {
         cpu++;
-        return console.log('you lost');
+        return console.log(`you lost, ${computerSelection} beats ${playerSelection}\nScore is ${p1} to ${cpu}`);
     }
 
     else if ((playerSelection === choice[0] && computerSelection === choice[2]) ||
         (playerSelection == choice[1]) && (computerSelection == choice[0]) ||
         (playerSelection === choice[2] && computerSelection === choice[1])) {
         p1++;
-        return console.log('you won')
+        return console.log(`you won, ${playerSelection} beats ${computerSelection}
+        \nScore is ${p1} to ${cpu}`)
     }
     else {
         return console.log('wrong input')
